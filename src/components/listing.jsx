@@ -1,6 +1,6 @@
 import React from "react";
 import UserData from "./UserDataCard";
-
+import ReactLoading from "react-loading";
 
 class Listing extends React.Component {
   // Constructor
@@ -63,8 +63,20 @@ class Listing extends React.Component {
     const { DataisLoaded, items, TotalPage, currentPageNo } = this.state;
     if (!DataisLoaded)
       return (
-        <div>
-          <h1> Pleses wait some time Loading.... </h1>{" "}
+        <div className="container ">
+          <div className="d-flex justify-content-center">
+            <ReactLoading
+              type="bubbles"
+              color="#black"
+              height={50}
+              width={100}
+            />
+            <br />
+          </div>
+          <br />
+          <h5 className="d-flex justify-content-center">
+            Please Wait Loading...
+          </h5>
         </div>
       );
 
